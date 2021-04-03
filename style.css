@@ -1,0 +1,281 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Consolas, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #091921;
+}
+
+body.light {
+  background: #d1dae3;
+}
+
+.clock {
+  width: 350px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid #091921;
+  border-radius: 50%;
+  box-shadow: 0 -15px 15px rgba(255,255,255,.05),
+    inset 0 -15px 15px rgba(255,255,255,.05),
+    0 15px 15px rgba(0,0,0,.3),
+    inset 0 15px 15px rgba(0,0,0,.3);
+}
+
+body.light .clock {
+  border: 4px solid #cad3dc;
+  box-shadow: 0 -15px 15px rgba(255,255,255,.5),
+    inset 0 -15px 15px rgba(255,255,255,.5),
+    0 15px 15px rgba(0,0,0,.1),
+    inset 0 15px 15px rgba(0,0,0,.1);
+}
+
+.clock:before {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  z-index: 100000;
+  border-radius: 50%;
+}
+
+body.light .clock:before {
+  background: #091921;
+}
+
+.hour,
+.min,
+.sec {
+  position: absolute;
+}
+
+.hour,
+.hr {
+  width: 160px;
+  height: 160px;
+}
+
+.min,
+.mn {
+  width: 190px;
+  height: 190px;
+}
+
+.sec,
+.sc {
+  width: 230px;
+  height: 230px;
+}
+
+.hr,
+.mn,
+.sc {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.hr:before {
+  content: '';
+  position: absolute;
+  width: 8px;
+  width: 8px;
+  height: 80px;
+  background: #ff105e;
+  border-radius: 6px 6px 0 0;
+}
+
+.mn:before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 90px;
+  background: #fff;
+  z-index: 11;
+  border-radius: 6px 6px 0 0;
+}
+
+body.light .mn:before {
+  background: #091921;
+}
+
+.sc:before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 150px;
+  background: #008eff;
+  z-index: 12;
+  border-radius: 6px 6px 0 0;
+}
+
+.clock-center {
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(7, 1fr);
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-areas:
+    ". . . n12 . . ."
+    ". . n11 . n1 . ."
+    ". n10 . . . n2 ."
+    "n9 . . . . . n3"
+    ". n8 . . . n4 ."
+    ". . n7 . n5 . ."
+    ". . . n6 . . .";
+}
+
+.number {
+  font-size: 1.5rem;
+  color: #fff;
+  line-height: 1;
+  align-self: center;
+  justify-self: center;
+}
+
+.light {
+  color: #091921;
+}
+
+.number-1 {
+  grid-area: n1;
+  justify-self: end;
+  align-self: start;
+}
+
+.number-2 {
+  grid-area: n2;
+  justify-self: end;
+  align-self: start;
+}
+
+.number-3 {
+  grid-area: n3;
+  justify-self: start;
+  align-self: center;
+}
+
+.number-4 {
+  grid-area: n4;
+  justify-self: end;
+  align-self: end;
+}
+
+.number-5 {
+  grid-area: n5;
+  justify-self: end;
+  align-self: end;
+}
+
+.number-6 {
+  grid-area: n6;
+  align-self: start;
+  justify-self: center;
+}
+
+.number-7 {
+  grid-area: n7;
+  justify-self: start;
+  align-self: end;
+}
+
+.number-8 {
+  grid-area: n8;
+  justify-self: start;
+  align-self: end;
+}
+
+.number-9 {
+  grid-area: n9;
+  justify-self: end;
+  align-self: center;
+}
+
+.number-10 {
+  grid-area: n10;
+  justify-self: start;
+  align-self: start;
+}
+
+.number-11 {
+  grid-area: n11;
+  justify-self: start;
+  align-self: start;
+}
+
+.number-12 {
+  grid-area: n12;
+  justify-self: center;
+  align-self: end;
+}
+
+.toggle {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-box {
+  opacity: 1;
+  position: absolute;
+}
+
+.toggle-box {
+  border: 1px solid #cad3dc;
+  background: #091921;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  height: 26px;
+  width: 50px;
+}
+
+.ball {
+  background: #091921;
+  border: 1px solid #cad3dc;
+  border-radius: 50%;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  bottom: 1px;
+  height: 22px;
+  width: 22px;
+  transition: transform 0.2s linear;
+}
+
+.toggle-box.light .ball {
+  background: #cad3dc;
+  border: 1px solid #091921;
+  transform: translateX(24px);
+}
+.toggle-box.light {
+  border: 1px solid #091921;
+  background: #cad3dc;
+}
+
+svg {
+  height: 16px;
+  width: 16px;
+}
+
+.sun {
+  fill: yellow;
+}
