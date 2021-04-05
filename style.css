@@ -17,6 +17,115 @@ body.light {
   background: #d1dae3;
 }
 
+nav.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 100px;
+  z-index: 100;
+  background-color: #091921;
+  box-shadow: -5px -5px 10px #061116,
+              5px 5px 10px #0c212c;
+}
+
+nav.header.light {
+  background-color: #d1dae3;
+  box-shadow: 5px 5px 10px #c7cfd8,
+              -5px -5px 10px #dbe5ee;
+}
+
+.author {
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.author a,
+.author a:visited {
+  font-family: 'Overlock', Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #d1dae3;
+  text-decoration: none;
+  display: block;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 300;
+}
+
+.author.light a,
+.author.light a:visited {
+  color: #091921;
+}
+
+.author a:hover,
+.author.light a:hover {
+  color: #3498db;
+}
+
+.toggle {
+  margin: 0 1rem;
+  flex-basis: baseline;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-box {
+  opacity: 1;
+  position: absolute;
+}
+
+.toggle-box {
+  border: 1px solid #cad3dc;
+  background: #091921;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  height: 26px;
+  width: 50px;
+}
+
+.ball {
+  background: #091921;
+  border: 1px solid #cad3dc;
+  border-radius: 50%;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  bottom: 1px;
+  height: 22px;
+  width: 22px;
+  transition: transform 0.2s linear;
+}
+
+.toggle-box.light .ball {
+  background: #cad3dc;
+  border: 1px solid #091921;
+  transform: translateX(24px);
+}
+.toggle-box.light {
+  border: 1px solid #091921;
+  background: #cad3dc;
+}
+
+svg {
+  height: 16px;
+  width: 16px;
+}
+
+.sun {
+  fill: yellow;
+}
+
 .clock {
   width: 350px;
   height: 350px;
@@ -221,61 +330,28 @@ body.light .mn:before {
   align-self: end;
 }
 
-.toggle {
-  position: absolute;
-  top: 30px;
-  right: 50px;
+footer {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  position: fixed;
+  padding: 8px 100px;
   display: flex;
-  align-items: center;
   justify-content: center;
-}
-
-.toggle-box {
-  opacity: 1;
-  position: absolute;
-}
-
-.toggle-box {
-  border: 1px solid #cad3dc;
-  background: #091921;
-  display: flex;
   align-items: center;
-  justify-content: space-between;
-  border-radius: 50px;
-  position: relative;
-  padding: 5px;
-  height: 26px;
-  width: 50px;
 }
 
-.ball {
-  background: #091921;
-  border: 1px solid #cad3dc;
-  border-radius: 50%;
-  position: absolute;
-  top: 1px;
-  left: 1px;
-  bottom: 1px;
-  height: 22px;
-  width: 22px;
-  transition: transform 0.2s linear;
+footer a {
+  text-decoration: none;
+  color: #d1dae3;
+  font-weight: 500;
+  font-size: 1.2rem;
 }
 
-.toggle-box.light .ball {
-  background: #cad3dc;
-  border: 1px solid #091921;
-  transform: translateX(24px);
-}
-.toggle-box.light {
-  border: 1px solid #091921;
-  background: #cad3dc;
+footer.light a {
+  color: #091921;
 }
 
-svg {
-  height: 16px;
-  width: 16px;
-}
-
-.sun {
-  fill: yellow;
+footer a:hover {
+  color: #3498db;
 }

@@ -5,12 +5,18 @@ const sc = document.querySelector('.sc')
 
 const toggleBox = document.querySelector('.toggle-box')
 const number = document.querySelectorAll('.number')
+const author = document.querySelector('.author')
+const header = document.querySelector('.header')
+const footer = document.querySelector('.footer')
 
 let lightMode = localStorage.getItem('lightMode')
 
 const enabledLightMode = () => {
   document.body.classList.add('light')
   toggleBox.classList.add('light')
+  author.classList.add('light')
+  header.classList.add('light')
+  footer.classList.add('light')
   number.forEach(n => {
     n.classList.add('light')
   })
@@ -20,6 +26,9 @@ const enabledLightMode = () => {
 const disabledLightMode = () => {
   document.body.classList.remove('light')
   toggleBox.classList.remove('light')
+  author.classList.remove('light')
+  header.classList.remove('light')
+  footer.classList.remove('light')
   number.forEach(n => {
     n.classList.remove('light')
   })
