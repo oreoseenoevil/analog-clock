@@ -7,6 +7,7 @@ const toggleBox = document.querySelector('.toggle-box')
 const number = document.querySelectorAll('.number')
 const author = document.querySelector('.author')
 const header = document.querySelector('.header')
+const angle = document.querySelector('.angle')
 const footer = document.querySelector('.footer')
 
 let lightMode = localStorage.getItem('lightMode')
@@ -53,6 +54,10 @@ setInterval(() => {
   const hh = day.getHours() * 30
   const mh = day.getMinutes() * deg
   const sh = day.getSeconds() * deg
+
+  const ang = Math.abs((hh + day.getMinutes() * 0.5) - mh)
+
+  angle.textContent = `${Math.min(ang, 360 - ang)}`
 
   hr.style.transform = `rotateZ(${(hh)+(mh/12)}deg)`
   mn.style.transform = `rotateZ(${mh}deg)`

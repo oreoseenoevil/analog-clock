@@ -9,6 +9,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 2rem;
   min-height: 100vh;
   background: #091921;
 }
@@ -328,6 +330,10 @@ body.light .mn:before {
   grid-area: n12;
   justify-self: center;
   align-self: end;
+}
+
+.angle {
+  color: #fff;
 }
 
 footer {
